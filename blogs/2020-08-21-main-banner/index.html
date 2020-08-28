@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-rc.1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>给 Hexo Volantis 主题添加图片轮播功能 - Volantis</title>
+  
+
+  
+    <meta name="description" content="很多网站首页都会有图片轮播效果，给网站的首页加上图片轮播的效果，可以很好的起到广告的作用也可以起到推荐优秀内容的作用。来吧，下面是给 Volantis 主题加上首页图片轮播的效果。">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+    
+      <meta name="msapplication-TileColor" content="#ffffff">
+    
+      <meta name="msapplication-config" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/browserconfig.xml">
+    
+      <meta name="theme-color" content="#ffffff">
+    
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fontawesome-pro@master/css/all.min.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- import link -->
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon-16x16.png">
+  <link rel="manifest" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/site.webmanifest">
+  <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/favicon.ico">
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+</head>
+
+<body>
+  <header class="l_header auto shadow blur" style='opacity: 0' >
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+            <img no-lazy class='logo' src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
+          
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://xaoxuu.com/wiki/volantis/
+                  
+                  
+                  
+                    id="https:xaoxuucomwikivolantis"
+                  >
+                  <i class='fad fa-flag faa-tada fa-fw'></i>开始
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://xaoxuu.com/wiki/volantis/
+                  
+                  
+                  
+                    id="https:xaoxuucomwikivolantis"
+                  >
+                  <i class='fad fa-book faa-tada fa-fw'></i>文档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/faqs/
+                  
+                  
+                  
+                    id="faqs"
+                  >
+                  <i class='fad fa-question-circle faa-tada fa-fw'></i>帮助
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/examples/
+                  
+                  
+                  
+                    id="examples"
+                  >
+                  <i class='fad fa-play-circle faa-tada fa-fw'></i>示例
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/contributors/
+                  
+                  
+                  
+                    id="contributors"
+                  >
+                  <i class='fad fa-fan fa-spin fa-fw'></i>社区
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fad fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/volantis-docs/
+                  
+                  
+                  
+                    id="https:githubcomvolantis-xvolantis-docs"
+                  >
+                  本站源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/hexo-theme-volantis/
+                  
+                  
+                  
+                    id="https:githubcomvolantis-xhexo-theme-volantis"
+                  >
+                  主题源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/hexo-theme-volantis/releases/
+                  
+                  
+                  
+                    id="https:githubcomvolantis-xhexo-theme-volantisreleases"
+                  >
+                  更新日志
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  博客文章
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/v3/getting-started/
+                  
+                  
+                  
+                    id="v3getting-started"
+                  >
+                  旧版文档 v3
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/v2/getting-started/
+                  
+                  
+                  
+                    id="v2getting-started"
+                  >
+                  旧版文档 v2
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://xaoxuu.com/wiki/volantis/
+                  
+                  
+                  
+                    id="https:xaoxuucomwikivolantis"
+                  >
+                  <i class='fad fa-flag faa-tada fa-fw'></i>开始
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://xaoxuu.com/wiki/volantis/
+                  
+                  
+                  
+                    id="https:xaoxuucomwikivolantis"
+                  >
+                  <i class='fad fa-book faa-tada fa-fw'></i>文档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/faqs/
+                  
+                  
+                  
+                    id="faqs"
+                  >
+                  <i class='fad fa-question-circle faa-tada fa-fw'></i>帮助
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/examples/
+                  
+                  
+                  
+                    id="examples"
+                  >
+                  <i class='fad fa-play-circle faa-tada fa-fw'></i>示例
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/contributors/
+                  
+                  
+                  
+                    id="contributors"
+                  >
+                  <i class='fad fa-fan fa-spin fa-fw'></i>社区
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fad fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/volantis-docs/
+                  
+                  
+                  
+                    id="https:githubcomvolantis-xvolantis-docs"
+                  >
+                  本站源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/hexo-theme-volantis/
+                  
+                  
+                  
+                    id="https:githubcomvolantis-xhexo-theme-volantis"
+                  >
+                  主题源码
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=https://github.com/volantis-x/hexo-theme-volantis/releases/
+                  
+                  
+                  
+                    id="https:githubcomvolantis-xhexo-theme-volantisreleases"
+                  >
+                  更新日志
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  博客文章
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/v3/getting-started/
+                  
+                  
+                  
+                    id="v3getting-started"
+                  >
+                  旧版文档 v3
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/v2/getting-started/
+                  
+                  
+                  
+                    id="v2getting-started"
+                  >
+                  旧版文档 v2
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  <div class="l_body">
+    <div class="l_cover">
+
+  
+  
+      <div class='cover-wrapper post dock' style="display: none;">
+        
+          <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg"></div>
+        
+        <div class='cover-body'>
+  <div class='top'>
+    
+    
+      <p class="title">Volantis</p>
+    
+    
+  </div>
+  <div class='bottom'>
+    <div class='menu navigation'>
+      <div class='list-h'>
+        
+          
+            <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/volantis/"
+              
+              
+              id="https:xaoxuucomwikivolantis">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg'><p>文档</p>
+            </a>
+          
+            <a href="/faqs/"
+              
+              
+              id="faqs">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg'><p>帮助</p>
+            </a>
+          
+            <a href="/examples/"
+              
+              
+              id="examples">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg'><p>示例</p>
+            </a>
+          
+            <a href="/contributors/"
+              
+              
+              id="contributors">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg'><p>社区</p>
+            </a>
+          
+            <a href="/archives/"
+              
+              
+              id="archives">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg'><p>博客</p>
+            </a>
+          
+            <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/"
+              
+              
+              id="https:githubcomvolantis-xhexo-theme-volantis">
+              <img src='https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg'><p>源码</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+      </div>
+  
+
+</div>
+
+    <div class='safearea'>
+      <div class='body-wrapper' id="pjax-container">
+        
+          <!--此文件用来存放一些不方便取值的变量-->
+<!--思路大概是将值藏到重加载的区域内-->
+
+
+
+<div id="pjax-data" style="display: none">
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">给 Hexo Volantis 主题添加图片轮播功能</div>
+  <div id="pjax-enable-cover">true</div>
+  <div id="pjax-comment-path"></div>
+  <div id="pjax-comment-placeholder"></div>
+</div>
+
+
+<script>
+  // 处理封面 此时 jquery 还没加载
+  if ("none" == "none") { // 移除封面
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
+  } else {
+    if ("none" == "half") { // 半屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
+      document.getElementsByClassName('scroll-down')[0].style.display = "none";
+    } else if ("none" == "full") { // 全屏
+      document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
+      document.getElementsByClassName('scroll-down')[0].style.display = "";
+    }
+    document.getElementsByClassName('cover-wrapper')[0].style.display = "";
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show");
+  }
+</script>
+
+
+        
+        
+
+<div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  <div class='article-header'>
+    
+    <div class="article-meta" id="top">
+      
+      
+      
+        <h1 class="title">
+          <a target="_blank" rel="noopener" href="https://www.heson10.com/posts/19736.html">
+            给 Hexo Volantis 主题添加图片轮播功能
+          </a>
+        </h1>
+        <div class='new-meta-box'>
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/heson525/pic@master/pic/avatar03.png">
+    <p>heson</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年8月21日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="给 Hexo Volantis 主题添加图片轮播功能" data-path="/blogs/2020-08-21-main-banner/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+            
+          
+        </div>
+      
+    </div>
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <div class="note "><p>很多网站首页都会有图片轮播效果，给网站的首页加上图片轮播的效果，可以很好的起到广告的作用也可以起到推荐优秀内容的作用。来吧，下面是给Volantis主题加上首页图片轮播的效果。</p></div>
+
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p>以下是1.0版本的效果图，后期<del>说不定</del>会改：</p>
+<p><img src="https://picup.heson10.com/img/image-20200821124534122.png" class="lazyload" data-srcset="https://picup.heson10.com/img/image-20200821124534122.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20200821124534122"></p>
+<h2 id="整体思路"><a href="#整体思路" class="headerlink" title="整体思路"></a>整体思路</h2><p>1.寻找自己喜欢的图片轮播插件；</p>
+<p>2.在首页模板<code>archive.ejs</code>中添加图片轮播代码；</p>
+<p>3.引用所需的jq库（主题自带）、js和css；</p>
+<p>4.修改配置文件，增加轮播开关和图片替换等功能。</p>
+<h2 id="教程开始"><a href="#教程开始" class="headerlink" title="教程开始"></a>教程开始</h2><h3 id="下载JQuery插件"><a href="#下载JQuery插件" class="headerlink" title="下载JQuery插件"></a>下载JQuery插件</h3><p>我已经上传到网盘：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">链接：https://pan.baidu.com/s/1D0ytw6w33uRCyXDX-4ubPA</span><br><span class="line">提取码：q4hg</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加轮播框架"><a href="#增加轮播框架" class="headerlink" title="增加轮播框架"></a>增加轮播框架</h3><ul>
+<li>在<code>themes\volantis\layout\_widget</code>中新建<code>main_banner.ejs</code>文件</li>
+<li>在main_banner.ejs文件中写入以下代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;heson_row&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;main_banner shadow floatable blur&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;banners&quot;&gt;</span><br><span class="line">            &lt;!--加上左右箭头》》--&gt;</span><br><span class="line">            &lt;div class&#x3D;&quot;click_left&quot;&gt;</span><br><span class="line">                &lt;img class&#x3D;&quot;get_height&quot; onclick&#x3D;&quot;banner_left_right(&#39;left&#39;)&quot; src&#x3D;&quot;..&#x2F;img&#x2F;banner_left.png&quot;&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">            &lt;div class&#x3D;&quot;click_right&quot;&gt;</span><br><span class="line">                &lt;img onclick&#x3D;&quot;banner_left_right(&#39;right&#39;)&quot; src&#x3D;&quot;..&#x2F;img&#x2F;banner_right.png&quot;&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">            &lt;!--《《加上左右箭头--&gt;</span><br><span class="line">            &lt;div class&#x3D;&quot;number&quot;&gt;</span><br><span class="line">                &lt;div class&#x3D;&quot;numbers&quot;&gt;</span><br><span class="line">                &lt;&#x2F;div&gt;</span><br><span class="line">                &lt;div style&#x3D;&quot;clear: both;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">            &lt;div class&#x3D;&quot;banner_img&quot;&gt;</span><br><span class="line">                &lt;!--主题config中配置参数--&gt;</span><br><span class="line">                &lt;%- theme.plugins.main_banner.pics %&gt;</span><br><span class="line">            &lt;&#x2F;div&gt;</span><br><span class="line">            &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">                var speed &#x3D; &lt;%&#x3D; theme.plugins.main_banner.speed %&gt;;&#x2F;&#x2F;配置中调用切换等待时间</span><br><span class="line">                var banner_max &#x3D; &lt;%&#x3D; theme.plugins.main_banner.banner_max %&gt;;&#x2F;&#x2F;配置中调用banner总数</span><br><span class="line">            &lt;&#x2F;script&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;hot_post&quot;&gt;</span><br><span class="line">        &lt;!--热门文章含图片--&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;index-banner&quot;&gt;</span><br><span class="line">            &lt;a href&#x3D;&quot;&lt;%- theme.plugins.hot_post.post_one %&gt;&quot; target&#x3D;&quot;_blank&quot;&gt;</span><br><span class="line">                &lt;img src&#x3D;&quot;&lt;%- theme.plugins.hot_post.pic_one %&gt;&quot; style&#x3D;&quot;width: 100%;&quot;&gt;</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;index-banner forpadding&quot;&gt;</span><br><span class="line">            &lt;a href&#x3D;&quot;&lt;%- theme.plugins.hot_post.post_two %&gt;&quot; target&#x3D;&quot;_blank&quot;&gt;</span><br><span class="line">                &lt;img src&#x3D;&quot;&lt;%- theme.plugins.hot_post.pic_two %&gt;&quot; style&#x3D;&quot;width: 100%;&quot;&gt;</span><br><span class="line">            &lt;&#x2F;a&gt;</span><br><span class="line">        &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加CSS样式和所需图片"><a href="#增加CSS样式和所需图片" class="headerlink" title="增加CSS样式和所需图片"></a>增加CSS样式和所需图片</h3><ul>
+<li><p>把前面网盘里面文件下载，找到img里的箭头图标，放进<code>themes\volantis\source\img</code><br><img src="https://picup.heson10.com/img/image-20200821203336667.png" class="lazyload" data-srcset="https://picup.heson10.com/img/image-20200821203336667.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20200821203336667"></p>
+</li>
+<li><p>在themes\volantis\source\css\style.css中，增加代码：</p>
+</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> hexo-config(<span class="string">&#x27;plugins.main_banner.enable&#x27;</span>)</span><br><span class="line">    @import <span class="string">&#x27;_other/main_banner&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在<code>themes\volantis\source\css\_other</code>文件夹<strong>（没有请新建）</strong>里增加文件<code>main_banner.styl</code>，并在其添加如下代码：</li>
+</ul>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">.main_banner</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">66%</span></span><br><span class="line">  <span class="attribute">float</span>:left</span><br><span class="line">  img</span><br><span class="line">   <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span></span><br><span class="line">  @media screen and (<span class="attribute">max-width</span>: <span class="number">800px</span>)</span><br><span class="line">   <span class="attribute">width</span>:<span class="number">100%</span></span><br><span class="line">   <span class="attribute">height</span>:<span class="number">40vw</span></span><br><span class="line">   <span class="attribute">float</span>:left</span><br><span class="line"></span><br><span class="line">.hot_post</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">33%</span></span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span></span><br><span class="line">  <span class="attribute">float</span>:left</span><br><span class="line">  <span class="attribute">padding</span>:<span class="number">0</span> <span class="number">0px</span> <span class="number">0</span> <span class="number">1vw</span></span><br><span class="line">  @media screen and (<span class="attribute">max-width</span>: <span class="number">800px</span>)</span><br><span class="line">   <span class="attribute">width</span>:<span class="number">100%</span></span><br><span class="line">   <span class="attribute">height</span>:<span class="number">50vw</span></span><br><span class="line">   <span class="attribute">float</span>:left</span><br><span class="line">   <span class="attribute">margin-top</span>:<span class="number">1vw</span></span><br><span class="line">   <span class="attribute">padding</span>:<span class="number">0</span></span><br><span class="line">  .forpadding</span><br><span class="line">    <span class="attribute">padding-top</span>:<span class="number">0.5vw</span></span><br><span class="line">  .index-banner</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">50%</span></span><br><span class="line"></span><br><span class="line">.heson_row</span><br><span class="line">  <span class="attribute">background-color</span>: none</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">100%</span></span><br><span class="line">  <span class="attribute">height</span>:<span class="number">20vw</span></span><br><span class="line">  <span class="attribute">max-height</span>:<span class="number">400px</span></span><br><span class="line">  <span class="attribute">margin-top</span>:<span class="number">20px</span>;</span><br><span class="line">  @media screen and (<span class="attribute">max-width</span>: <span class="number">800px</span>)</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span></span><br><span class="line">    <span class="attribute">height</span>:<span class="number">65vw</span></span><br><span class="line">  @media screen and (<span class="attribute">max-width</span>: <span class="variable">$device</span>-<span class="number">2</span>k)</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span></span><br><span class="line">    <span class="attribute">height</span>:<span class="number">25vw</span></span><br><span class="line"></span><br><span class="line">.banners</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">background-color</span>: rgba(<span class="number">200</span>,<span class="number">200</span>,<span class="number">200</span>,<span class="number">0.5</span>)</span><br><span class="line">  @media screen and (<span class="attribute">max-width</span>: <span class="number">600px</span>)</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span></span><br><span class="line">    <span class="attribute">height</span>:<span class="number">40vw</span></span><br><span class="line">    <span class="attribute">float</span>:left</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hot_post</span> img</span><br><span class="line">&#123;</span><br><span class="line">   <span class="attribute">height</span>:<span class="number">100%</span></span><br><span class="line">   <span class="attribute">border-radius</span>:<span class="number">8px</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.banners</span>:hover .click_left</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.banners</span>:hover .click_right</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.click_left</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">2vw</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">2.5vw</span>;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.click_right</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">    <span class="attribute">right</span>: <span class="number">2vw</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">2.5vw</span>;</span><br><span class="line">    <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.click_left</span> <span class="selector-tag">img</span>,<span class="selector-class">.click_right</span> img</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.number</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">bottom</span>: <span class="number">1.5vw</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.numbers</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.numbers</span> span</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0.7vw</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1vw</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">100vw</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">0.5vw</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0vw</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0.1vw</span> solid white;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.numbers</span> <span class="selector-tag">span</span>:hover</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.banner_img</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.banner_img</span> img</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">break-inside</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.l_main</span> <span class="selector-class">.post-list</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>:<span class="number">0</span> auto!important;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加JS文件"><a href="#增加JS文件" class="headerlink" title="增加JS文件"></a>增加JS文件</h3><ul>
+<li>在<code>themes\volantis\layout\layout.ejs</code>中<code>&lt;/body&gt;</code>上加上代码:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;% if (theme.plugins.main_banner.enable &#x3D;&#x3D; true) &#123; %&gt;</span><br><span class="line">  &lt;script src&#x3D;&quot;..&#x2F;js&#x2F;main_banner.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在<code>themes\volantis\source\js</code>中增加<code>main_banner.js</code>，其中代码为：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*图片轮播*/</span></span><br><span class="line"><span class="keyword">var</span> banners = <span class="number">1</span>;<span class="comment">//banner显示的第一幅画面1~banner_max范围内任意选择</span></span><br><span class="line"><span class="keyword">var</span> timer;<span class="comment">//计时器对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//img标签后直接调用运行</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loads</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> img_num = banner_max</span><br><span class="line">    $(<span class="string">&quot;.banner_img&quot;</span> + banners).fadeTo(<span class="number">100</span>, <span class="number">1</span>);<span class="comment">//显示设置的第一张banner</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> numbers_span = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= img_num; ++i) &#123;</span><br><span class="line">        numbers_span += <span class="string">&#x27;&lt;span class=&quot;num&#x27;</span> + i + <span class="string">&#x27;&quot; onclick=&quot;manual_replace_banner(&#x27;</span> + i + <span class="string">&#x27;)&quot;&gt;&#x27;</span> + i + <span class="string">&#x27;&lt;/span&gt;&#x27;</span>; <span class="comment">//循环赋值到字符串</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $(<span class="string">&quot;.numbers&quot;</span>).html(numbers_span);<span class="comment">//设置对应banner的数字</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//自适应修改行高</span></span><br><span class="line">    <span class="keyword">var</span> banners_height = $(<span class="string">&quot;.banners&quot;</span>).height();</span><br><span class="line">    $(<span class="string">&quot;.banners&quot;</span>).css(<span class="string">&quot;line-height&quot;</span>, banners_height + <span class="string">&quot;px&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//窗口事件修改行高</span></span><br><span class="line"></span><br><span class="line">$(<span class="built_in">window</span>).resize(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> banners_height = $(<span class="string">&quot;.banners&quot;</span>).height();</span><br><span class="line">    $(<span class="string">&quot;.banners&quot;</span>).css(<span class="string">&quot;line-height&quot;</span>, banners_height + <span class="string">&quot;px&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//页面文件加载完毕后自动调用</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    banner_number();<span class="comment">//banner页数高亮显示</span></span><br><span class="line"></span><br><span class="line">    timer = <span class="built_in">setInterval</span>(auto_replace_banner, speed * <span class="number">1000</span>);<span class="comment">//banner切换计时器</span></span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//点击左右按钮更换banner</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">banner_left_right</span>(<span class="params">sj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sjs;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (sj == <span class="string">&quot;left&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (banners == <span class="number">1</span>) &#123;</span><br><span class="line">            sjs = banner_max;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            sjs = banners - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (banners == banner_max) &#123;</span><br><span class="line">            sjs = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            sjs = banners + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    manual_replace_banner(sjs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//点击数字切换</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">manual_replace_banner</span>(<span class="params">sj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bannerz = banners;</span><br><span class="line"></span><br><span class="line">    banners = sj;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (banners == bannerz) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">clearInterval</span>(timer);<span class="comment">//停止计时器</span></span><br><span class="line"></span><br><span class="line">    fade_in_out(bannerz, banners);<span class="comment">//调用切换函数</span></span><br><span class="line"></span><br><span class="line">    timer = <span class="built_in">setInterval</span>(auto_replace_banner, speed * <span class="number">1000</span>);<span class="comment">//banner切换计时器重新启动</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//自动更换banner</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">auto_replace_banner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bannerz = banners;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (banners == banner_max) &#123;</span><br><span class="line">        banners = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        banners += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fade_in_out(bannerz, banners);<span class="comment">//调用切换函数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//淡入淡出效果方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fade_in_out</span>(<span class="params">bannerz, banners</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> out_id = <span class="string">&quot;.banner_img&quot;</span> + bannerz;<span class="comment">//淡出标签的ID名</span></span><br><span class="line">    <span class="keyword">var</span> banner_out = $(out_id);<span class="comment">//获取淡出对象</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> in_id = <span class="string">&quot;.banner_img&quot;</span> + banners;<span class="comment">//淡入标签的ID名</span></span><br><span class="line">    <span class="keyword">var</span> bannet_in = $(in_id);<span class="comment">//获取淡入对象</span></span><br><span class="line"></span><br><span class="line">    banner_out.fadeTo(<span class="number">600</span>, <span class="number">0</span>);<span class="comment">//JQuery方法淡出到指定透明度,参数1为速度，参数2为透明度</span></span><br><span class="line">    bannet_in.fadeTo(<span class="number">500</span>, <span class="number">1</span>);<span class="comment">//JQuery方法淡入,参数1为速度，参数2为透明度</span></span><br><span class="line"></span><br><span class="line">    banner_number();<span class="comment">//调用数字颜色更换</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//banner数字显示</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">banner_number</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= banner_max; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> num_id = <span class="string">&quot;.num&quot;</span> + i;</span><br><span class="line">        <span class="keyword">var</span> num_object = $(num_id);</span><br><span class="line">        <span class="keyword">if</span> (banners == i) &#123;</span><br><span class="line">            num_object.css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;black&quot;</span>);</span><br><span class="line">            num_object.css(<span class="string">&quot;backgroundColor&quot;</span>, <span class="string">&quot;white&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            num_object.css(<span class="string">&quot;color&quot;</span>, <span class="string">&quot;white&quot;</span>);</span><br><span class="line">            num_object.css(<span class="string">&quot;backgroundColor&quot;</span>, <span class="string">&quot;rgba(0,0,0,0)&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//banner链接跳转</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">link</span>(<span class="params">url, mode = true</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (mode == <span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="built_in">window</span>.open(url);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">window</span>.location.href = url;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loads();</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h3><p>在plugins:下增加如下代码：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">main_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>    <span class="comment"># 开启图片轮播</span></span><br><span class="line">  <span class="attr">banner_max:</span> <span class="number">3</span>   <span class="comment">#图片数量</span></span><br><span class="line">  <span class="attr">speed:</span> <span class="number">2</span>        <span class="comment">#切换秒数</span></span><br><span class="line">  <span class="attr">pics:</span>   <span class="comment"># 在此更换图片   &lt;img class=&quot;banner_img（注意这里填1、2、3、4、5）&quot; src=&quot;图片地址&quot; onclick=&quot;link(&quot;跳转地址&quot;,true（代表新窗口打开）)&quot; style=&quot;opacity: 1;&quot;(第一个填1，后面填0)&gt;</span></span><br><span class="line">     <span class="string">&#x27;</span></span><br><span class="line"><span class="string">     &lt;img class=&quot;banner_img1&quot; src=&quot;https://cdn.jsdelivr.net/gh/heson10/pic@master/img/Texture-1.png&quot; onclick=&quot;link(&quot;https://www.heson10.com&quot;,true)&quot; style=&quot;opacity: 1;&quot;&gt;</span></span><br><span class="line"><span class="string">	 &lt;img class=&quot;banner_img2&quot; src=&quot;https://cdn.jsdelivr.net/gh/heson10/pic@master/img/Texture-2.png&quot; onclick=&quot;link(&quot;https://www.heson10.com&quot;,false)&quot; style=&quot;opacity: 0;&quot;&gt;</span></span><br><span class="line"><span class="string">     &lt;img class=&quot;banner_img3&quot; src=&quot;https://cdn.jsdelivr.net/gh/heson10/pic@master/img/Texture-3.png&quot; onclick=&quot;link(&quot;https://www.heson10.com&quot;,true)&quot; style=&quot;opacity: 0;&quot;&gt;</span></span><br><span class="line"><span class="string">     &#x27;</span></span><br><span class="line"><span class="comment">########### 热门帖子 ##############</span></span><br><span class="line"><span class="attr">hot_post:</span></span><br><span class="line">  <span class="comment">###### 热门1 #####</span></span><br><span class="line">  <span class="attr">pic_one:</span> <span class="string">https://picup.heson10.com/img/spring-boot-learning.png</span></span><br><span class="line">  <span class="attr">post_one:</span> <span class="string">https://www.heson10.com</span></span><br><span class="line">  <span class="comment">###### 热门2 #####</span></span><br><span class="line">  <span class="attr">pic_two:</span> <span class="string">https://picup.heson10.com/img/spring-cloud-learning.png</span>  </span><br><span class="line">  <span class="attr">post_two:</span> <span class="string">https://www.heson10.com</span>   </span><br></pre></td></tr></table></figure>
+
+<h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><p><img src="https://picup.heson10.com/img/lunboxiaoguo.png" class="lazyload" data-srcset="https://picup.heson10.com/img/lunboxiaoguo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="lunboxiaoguo"></p>
+
+    
+      
+      <div class='footer'>
+        
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+                
+                  <p>本文永久链接是：<a href=https://volantis.js.org/blogs/2020-08-21-main-banner/>https://volantis.js.org/blogs/2020-08-21-main-banner/</a></p>
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-22T00:00:00+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：2020年8月22日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://volantis.js.org/blogs/2020-08-21-main-banner/&title=给 Hexo Volantis 主题添加图片轮播功能 - Volantis&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://volantis.js.org/blogs/2020-08-21-main-banner/&title=给 Hexo Volantis 主题添加图片轮播功能 - Volantis&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://volantis.js.org/blogs/2020-08-21-main-banner/&title=给 Hexo Volantis 主题添加图片轮播功能 - Volantis&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/blogs/2020-08-08-issue-timeline/'>
+          <p class='title'>从 Issue 中加载时间线<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>GitHub API 频繁失效， Gitee API 挺稳定的，下面是从 Gitee Issues 中读取的数据：
+
+
+
+
+
+function loadTimeline() {
+  $.get(...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct></p>
+    
+    <div id="disqus_thread">
+  <div id="notShowDisqus" style="display: none;text-align: center;"><i class='fas fa-exclamation-triangle'></i>&nbsp;无法加载 Disqus 评论系统，请确保您的网络能够正常访问。</div>
+  <div id="load-btns"><a class="load-comments" onclick="needLoadDisqus()">点击加载 Disqus 评论</a></div>
+  <div id="loading-comments" style="display: none"><i class="fa fa-cog fa-spin fa-fw fa-2x"></i><br>正在检查 Disqus 能否访问...</div>
+</div>
+
+  </article>
+
+
+
+
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-text">整体思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%99%E7%A8%8B%E5%BC%80%E5%A7%8B"><span class="toc-text">教程开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BDJQuery%E6%8F%92%E4%BB%B6"><span class="toc-text">下载JQuery插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0%E8%BD%AE%E6%92%AD%E6%A1%86%E6%9E%B6"><span class="toc-text">增加轮播框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0CSS%E6%A0%B7%E5%BC%8F%E5%92%8C%E6%89%80%E9%9C%80%E5%9B%BE%E7%89%87"><span class="toc-text">增加CSS样式和所需图片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E5%8A%A0JS%E6%96%87%E4%BB%B6"><span class="toc-text">增加JS文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">修改主题配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-text">最终效果</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+
+      </div>
+      
+  
+  <footer class="footer clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/020-rss.svg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="/>
+                
+              </a>
+            
+          
+            
+          
+            
+              <a href="https://github.com/volantis-x/"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/029-github.svg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="/>
+                
+              </a>
+            
+          
+            
+              <a href="/"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/010-facebook.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/010-facebook.svg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="/>
+                
+              </a>
+            
+          
+            
+              <a href="/"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/018-twitter.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/018-twitter.svg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="/>
+                
+              </a>
+            
+          
+            
+              <a href="/"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/045-telegram.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/045-telegram.svg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="/>
+                
+              </a>
+            
+          
+            
+              <a href="/"
+                class="social  flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+                  <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/006-youtube.svg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org@1.1/icon/1322024-social-media/006-youtube.svg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="/>
+                
+              </a>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      
+    
+      
+        <p>本站使用 <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/4.0.0-rc.1" target="_blank" rel="noopener external nofollow noreferrer">Volantis</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/volantis-x/volantis-docs" target="_blank" rel="noopener external nofollow noreferrer">本站源码</a>。</p>
+
+      
+    
+      
+        
+          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
+</div>
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://github.com/volantis-x/" target="_blank" rel="noopener external nofollow noreferrer">Copyright © 2017-2020 Volantis Team</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+      <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+  </div>
+  <div>
+    
+    <!-- required -->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".md").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      // 背景层
+      var bgDiv = document.createElement("div");
+      $(bgDiv).addClass("bg");
+      if ($(this).attr('bg')) {
+        $(bgDiv).css('background', $(this).attr('bg'));
+      }
+      $(this).wrap(bgDiv); // 背景层
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+<!-- internal -->
+
+
+
+<!-- optional -->
+
+  <script>
+  
+  var SEARCH_SERVICE = "hexo" || "hexo";
+  var ROOT = "/" || "/";
+  if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+
+
+  
+  
+    <script>
+      window.FPConfig = {
+        delay: 0,
+        ignoreKeywords: [],
+        maxRPS: 5,
+        hoverDelay: 25
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"></script>
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+		if($(".highlight .code pre").length+$(".article pre code").length==0)return;
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+
+
+
+
+
+
+  <script>
+  const disqus_shortname = 'volantis';
+  const autoload = 'false';
+  const global_url = 'https://volantis.js.org';  //  must use an absolute URL; relative URLs won’t work.
+
+
+  function checkDisqus() {
+    // 正在检查 Disqus 能否访问...
+    const runcheck = (domain) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image;
+            const timeout = setTimeout(() => {
+                img.onerror = img.onload = null;
+                reject();
+            }, 3000);
+            img.onerror = () => {
+                clearTimeout(timeout);
+                reject();
+            }
+            img.onload = () => {
+                clearTimeout(timeout);
+                resolve();
+            }
+            img.src = `https://${domain}/favicon.ico?${+(new Date)}=${+(new Date)}`;
+        })
+    }
+    return Promise.all([
+        runcheck('volantis.disqus.com')
+    ]).then(loadDisqus,showError);
+  }
+
+  function loadDisqus() {
+
+    let path = $.trim($('#pjax-comment-path').text());
+    if (path.length == 0) {
+      let defaultPath = '/';
+      path = defaultPath || decodeURI(window.location.pathname);
+    }
+
+    if (window.DISQUS) {
+      window.DISQUS.reset({
+          reload: true,
+          config() {
+            this.page.identifier = global_url + path;
+            this.page.url = global_url + path;
+          }
+      });
+    } else {
+        window.disqus_config = function () {
+          this.page.url = global_url + path;
+          this.page.identifier = global_url + path;
+        };
+        let d = document, s = d.createElement('script');
+        s.async = true;
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    }
+  }
+
+  // 加载错误
+  function showError() {
+    $('#loading-comments').hide();
+    $('#notShowDisqus').show();
+  }
+
+  // 点击了加载
+  function needLoadDisqus() {
+    checkDisqus();
+    $('#load-btns').hide();
+    $('#loading-comments').show();
+  }
+
+  // pjax 重载
+  function pjax_disqus() {
+    // 排除当前页面不存在评论框的情形
+    if ($('#disqus_thread').length == 0) {return}
+    // 如果 DISQUS 已被实例化，则可直接加载
+    if (window.DISQUS) {
+      $('#load-btns').hide();
+      $('#notShowDisqus').hide();
+      $('#loading-comments').hide();
+      loadDisqus();
+    } else if (autoload == 'true') {
+      // 设置自动加载但是上个页面加载失败了
+      needLoadDisqus();
+    }
+  }
+  if (autoload == 'true') {
+    needLoadDisqus();
+  }
+
+</script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5/lib/darkmode-js.min.js" aysc></script>
+
+<script type="text/javascript">
+function getClientHeight(){
+  var clientHeight=0;
+  if(document.body.clientHeight&&document.documentElement.clientHeight){
+  var clientHeight = (document.body.clientHeight<document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }else{
+  var clientHeight = (document.body.clientHeight>document.documentElement.clientHeight)?document.body.clientHeight:document.documentElement.clientHeight;
+  }
+  return clientHeight;
+}
+function supportCss3(style) {
+  var prefix = ['webkit', 'Moz', 'ms', 'o'],
+  i,
+  humpString = [],
+  htmlStyle = document.documentElement.style,
+  _toHumb = function (string) {
+  return string.replace(/-(\w)/g, function ($0, $1) {
+  return $1.toUpperCase();
+  });
+  };
+  for (i in prefix)
+  humpString.push(_toHumb(prefix[i] + '-' + style));
+  humpString.push(_toHumb(style));
+  for (i in humpString)
+  if (humpString[i] in htmlStyle) return true;
+  return false;
+};
+//配置信息
+var options = {
+  bottom: '32px',
+  right: 'unset',
+  left: '16px',
+  time: '0s',
+  mixColor: '#f4f4f4',
+  backgroundColor: '#f4f4f4',
+  buttonColorDark: '#333',
+  buttonColorLight: '#ddd',
+  saveInCookies: true,
+  label: '',
+  autoMatchOsTheme: true
+};
+// 卡片兼容处理 mix-blend-mode 与 effect: [blur] 冲突
+
+function pjax_darkmodejs(){
+  
+  if(!supportCss3('mix-blend-mode'))return;
+  var checkExist2 = setInterval(function() {
+     if (typeof jQuery == 'undefined'){return;}
+     clearInterval(checkExist2);
+     var TopFlag=getClientHeight();
+    $(window).scroll(function(){
+      var top = $(document).scrollTop();
+      if(top > TopFlag) {
+        $(".darkmode-layer").css("mix-blend-mode","normal");
+        $(".darkmode-layer").css("background-color","#222");
+      }else{
+        $(".darkmode-layer").css("mix-blend-mode","difference");
+        $(".darkmode-layer").css("background-color","");
+      }
+    })
+  }, 100);
+  
+}
+// mix-blend-mode support?
+if(supportCss3('mix-blend-mode')){
+  window.darkmode = new Darkmode(options);
+  
+  window.darkmode.showWidget();
+  
+  pjax_darkmodejs();
+}
+////////////////Development///////////////////////
+//////////////darkmode模式切换////////////////////
+//window.darkmode.toggle();                     //
+//////////////darkmode模式判断////////////////////
+//console.log(window.darkmode.isActivated())    //
+//////////////////////////////////////////////////
+</script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script defer>
+
+  const LCCounter = {
+    app_id: 'GCYDRKI6XRkyC7EuEhJv90ia-MdYXbMMI',
+    app_key: '4xKBXGBj6BgecU62vff5rJHs',
+    custom_api_server: '',
+
+    // 查询存储的记录
+    getRecord(Counter, url, title) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({url})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {url, title: title, times: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    },
+
+    // 发起自增请求
+    increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    },
+
+    // 构建自增请求体
+    buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "times": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    },
+
+    // 校验是否为有效的 UV
+    validUV() {
+      var key = 'LeanCloudUVTimestamp';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    },
+
+    addCount(Counter) {
+      var enableIncr = '' === 'true' && window.location.hostname !== 'localhost';
+      enableIncr = true;
+      var getterArr = [];
+      var incrArr = [];
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#lc-sv');
+      if (pvCtn || enableIncr) {
+        var pvGetter = this.getRecord(Counter, 'https://volantis.js.org' + '/#lc-sv', 'Visits').then((record) => {
+          incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-sv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + 1;
+              if (pvCtn) {
+                pvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#lc-uv');
+      if (uvCtn || enableIncr) {
+        var uvGetter = this.getRecord(Counter, 'https://volantis.js.org' + '/#lc-uv', 'Visitors').then((record) => {
+          var vuv = this.validUV();
+          vuv && incrArr.push(this.buildIncrement(record.objectId))
+          var eles = document.querySelectorAll('#lc-uv #number');
+          if (eles.length > 0) {
+            eles.forEach((el,index,array)=>{
+              el.innerText = record.times + (vuv ? 1 : 0);
+              if (uvCtn) {
+                uvCtn.style.display = 'inline';
+              }
+            })
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 请求文章的浏览数，如果是当前页面就自增
+      var allPV = document.querySelectorAll('#lc-pv');
+      if (allPV.length > 0 || enableIncr) {
+        for (i = 0; i < allPV.length; i++) {
+          let pv = allPV[i];
+          let title = pv.getAttribute('data-title');
+          var url = 'https://volantis.js.org' + pv.getAttribute('data-path');
+          if (url) {
+            var viewGetter = this.getRecord(Counter, url, title).then((record) => {
+              // 是当前页面就自增
+              if (pv.getAttribute('data-path') == window.location.pathname) {
+                incrArr.push(this.buildIncrement(record.objectId));
+              }
+              if (pv) {
+                var ele = pv.querySelector('#lc-pv #number');
+                if (ele) {
+                  if (pv.getAttribute('data-path') == window.location.pathname) {
+                    ele.innerText = (record.times || 0) + 1;
+                  } else {
+                    ele.innerText = record.times || 0;
+                  }
+                  pv.style.display = 'inline';
+                }
+              }
+            });
+            getterArr.push(viewGetter);
+          }
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && this.increment(Counter, incrArr);
+        })
+      }
+
+    },
+
+
+    fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': this.app_id,
+            'X-LC-Key': this.app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      this.addCount(Counter);
+    },
+
+    refreshCounter() {
+      var api_server = this.app_id.slice(-9) !== '-MdYXbMMI' ? this.custom_api_server : `https://${ this.app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+      if (api_server) {
+        this.fetchData(api_server);
+      } else {
+        fetch('https://app-router.leancloud.cn/2/route?appId=' + this.app_id)
+          .then(resp => resp.json())
+          .then(({api_server}) => {
+            this.fetchData('https://' + api_server);
+          });
+      }
+    }
+
+  };
+
+  LCCounter.refreshCounter();
+
+  document.addEventListener('pjax:complete', function () {
+    LCCounter.refreshCounter();
+  });
+</script>
+
+
+
+<!-- more -->
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+      try{
+        pjax_fancybox();
+        
+        
+        
+        
+          pjax_initCopyCode();
+        
+        
+        
+        
+        
+          pjax_disqus();
+        
+        
+          pjax_darkmodejs();
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
